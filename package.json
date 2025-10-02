@@ -1,0 +1,30 @@
+{
+  "name": "hero",
+  "version": "1.0.0",
+  "description": "🚂 A comprehensive railway gate monitoring system that helps commuters avoid long waits at railway crossings by providing real-time gate status, train schedules, and alternative route suggestions.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nickroy07/hero.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nickroy07/hero/issues"
+  },
+  "homepage": "https://github.com/Nickroy07/hero#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "helmet": "^8.1.0",
+    "morgan": "^1.10.1",
+    "uuid": "^13.0.0",
+    "ws": "^8.18.3"
+  }
+}

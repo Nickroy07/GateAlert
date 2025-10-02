@@ -1,0 +1,40 @@
+﻿# Gate Alert - Setup Instructions
+
+## Project Location: C:\gate-alert
+
+## Quick Start Guide:
+
+### 1. Navigate to project directory:
+cd C:\gate-alert
+
+### 2. Install Node.js dependencies:
+npm install
+
+### 3. Start the Gate Alert server:
+npm start
+
+### 4. Access the application:
+Open your browser and go to: http://localhost:3000
+
+## Features:
+- Real-time railway gate status for Pune district
+- 45+ local train locations across Pune
+- Alternative route suggestions
+- Live train schedule updates
+- Professional blue interface design
+
+## Files Included:
+- index.html       : Main application interface
+- gandu.css        : Professional styling (blue theme)
+- script.js        : Interactive functionality
+- server.js        : Node.js backend server
+- train_processor.py : Python data processing
+- package.json     : Node.js configuration
+- requirements.txt : Python dependencies
+- README.md        : Detailed documentation
+
+## System Requirements:
+- Node.js (v16 or higher)
+- Python (v3.8 or higher) - Optional for advanced features
+
+Built specifically for Pune district railway commuters! 

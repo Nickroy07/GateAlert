@@ -1,0 +1,326 @@
+/* Additional styles for RailGate Monitor */
+
+/* Navigation */
+.navbar {
+    background: linear-gradient(135deg, #2980b9 0%, #3498db 100%);
+    box-shadow: 0 2px 20px rgba(52, 152, 219, 0.3);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+.nav-logo i {
+    margin-right: 10px;
+    font-size: 28px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: white;
+}
+
+.user-info span {
+    font-weight: 500;
+}
+
+/* Buttons */
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    color: white;
+    border: 2px solid transparent;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #2980b9 0%, #1e6091 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-secondary:hover {
+    background: white;
+    color: #3498db;
+    transform: translateY(-2px);
+}
+
+/* Dashboard */
+.dashboard-container {
+    margin-top: 70px;
+    min-height: calc(100vh - 70px);
+}
+
+.main-content {
+    padding-bottom: 40px;
+}
+
+/* Status Overview */
+.status-overview {
+    padding: 40px 0;
+    background: white;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 40px;
+    color: #2c3e50;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    border-radius: 2px;
+}
+
+.status-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.status-card {
+    background: white;
+    padding: 30px 25px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(52, 152, 219, 0.1);
+    border: 2px solid #e8f4fd;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.status-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+}
+
+.status-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(52, 152, 219, 0.2);
+}
+
+.status-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 24px;
+    color: white;
+}
+
+.status-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.status-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #3498db;
+    margin: 10px 0;
+}
+
+.status-card small {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+}
+
+.gate-status .status-value {
+    color: #e74c3c;
+}
+
+.gate-status.open .status-value {
+    color: #27ae60;
+}
+
+/* Train Schedule */
+.train-schedule {
+    padding: 40px 0;
+    background: #f8fafc;
+}
+
+.schedule-container {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(52, 152, 219, 0.1);
+    margin-top: 30px;
+}
+
+.schedule-header {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    color: white;
+    padding: 20px 25px;
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 1.5fr 1fr 1fr;
+    gap: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.schedule-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.schedule-item {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 1.5fr 1fr 1fr;
+    gap: 20px;
+    padding: 20px 25px;
+    border-bottom: 1px solid #e8f4fd;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.schedule-item:hover {
+    background: #f8fafc;
+}
+
+.schedule-item:last-child {
+    border-bottom: none;
+}
+
+.train-number {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.arrival-time {
+    color: #3498db;
+    font-weight: 600;
+}
+
+.gate-closure {
+    color: #e67e22;
+    font-weight: 500;
+}
+
+.duration {
+    color: #7f8c8d;
+}
+
+.train-status {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.status-ontime {
+    background: #d5f4e6;
+    color: #27ae60;
+}
+
+.status-delayed {
+    background: #ffeaa7;
+    color: #f39c12;
+}
+
+.status-approaching {
+    background: #fd79a8;
+    color: #e84393;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-wrap: wrap;
+    }
+    
+    .user-info {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .status-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .schedule-header,
+    .schedule-item {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        text-align: left;
+    }
+    
+    .schedule-header {
+        display: none;
+    }
+    
+    .schedule-item {
+        padding: 15px;
+        border-bottom: 1px solid #e8f4fd;
+    }
+    
+    .schedule-item > div {
+        margin-bottom: 5px;
+    }
+    
+    .login-card {
+        margin: 20px;
+        padding: 30px 20px;
+    }
+}
