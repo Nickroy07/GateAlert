@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gate Alert - Railway Gate Management System</title>
+    <link rel="stylesheet" href="gandu.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Login Screen -->
+    <div id="login-screen" class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <i class="fas fa-train"></i>
+                <h1>Gate Alert</h1>
+                <p>Railway Gate Management System</p>
+            </div>
+            <form id="login-form" class="login-form">
+                <div class="form-group">
+                    <label for="username">Full Name</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="location">Location/Station</label>
+                    <select id="location" name="location" required>
+                        <option value="">Select your location</option>
+                        <option value="pune-junction">Pune Junction</option>
+                        <option value="shivajinagar">Shivajinagar</option>
+                        <option value="khadki">Khadki</option>
+                        <option value="pimpri">Pimpri</option>
+                        <option value="chinchwad">Chinchwad</option>
+                        <option value="akurdi">Akurdi</option>
+                        <option value="dehu-road">Dehu Road</option>
+                        <option value="talegaon">Talegaon</option>
+                        <option value="lonavala">Lonavala</option>
+                        <option value="karjat">Karjat</option>
+                        <option value="hadapsar">Hadapsar</option>
+                        <option value="mundhwa">Mundhwa</option>
+                        <option value="loni-kalbhor">Loni Kalbhor</option>
+                        <option value="uruli-kanchan">Uruli Kanchan</option>
+                        <option value="yerwada">Yerwada</option>
+                        <option value="ghorpadi">Ghorpadi</option>
+                        <option value="mundhwa-kharadi">Mundhwa-Kharadi</option>
+                        <option value="wagholi">Wagholi</option>
+                        <option value="manjari">Manjari</option>
+                        <option value="bhigwan">Bhigwan</option>
+                        <option value="daund">Daund</option>
+                        <option value="indapur">Indapur</option>
+                        <option value="jejuri">Jejuri</option>
+                        <option value="saswad">Saswad</option>
+                        <option value="dive-ghat">Dive Ghat</option>
+                        <option value="katraj">Katraj</option>
+                        <option value="warje">Warje</option>
+                        <option value="kothrud">Kothrud</option>
+                        <option value="bavdhan">Bavdhan</option>
+                        <option value="pashan">Pashan</option>
+                        <option value="hinjewadi">Hinjewadi</option>
+                        <option value="wakad">Wakad</option>
+                        <option value="baner">Baner</option>
+                        <option value="aundh">Aundh</option>
+                        <option value="sangamner">Sangamner</option>
+                        <option value="ahmednagar">Ahmednagar</option>
+                        <option value="shirur">Shirur</option>
+                        <option value="chakan">Chakan</option>
+                        <option value="rajgurunagar">Rajgurunagar</option>
+                        <option value="manchar">Manchar</option>
+                        <option value="alephata">Alephata</option>
+                        <option value="junnar">Junnar</option>
+                        <option value="ambegaon">Ambegaon</option>
+                        <option value="ghodegaon">Ghodegaon</option>
+                        <option value="khed">Khed</option>
+                        <option value="chakan-bypass">Chakan Bypass</option>
+                        <option value="bhosari">Bhosari</option>
+                        <option value="nigdi">Nigdi</option>
+                        <option value="dapodi">Dapodi</option>
+                        <option value="kasarwadi">Kasarwadi</option>
+                        <option value="phugewadi">Phugewadi</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Access System</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main Dashboard -->
+    <div id="main-dashboard" class="dashboard-container" style="display: none;">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <i class="fas fa-train"></i>
+                    <span>Gate Alert</span>
+                </div>
+                <div class="user-info">
+                    <span id="welcome-user">Welcome, User</span>
+                    <button id="logout-btn" class="btn btn-secondary">Logout</button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Status Overview -->
+            <section class="status-overview">
+                <div class="container">
+                    <h2 class="section-title">Current Gate Status</h2>
+                    <div class="status-grid">
+                        <div class="status-card gate-status">
+                            <div class="status-icon">
+                                <i class="fas fa-traffic-light"></i>
+                            </div>
+                            <h3>Gate Status</h3>
+                            <p class="status-value" id="gate-status">CLOSED</p>
+                            <small>Next opening in 12 minutes</small>
+                        </div>
+                        <div class="status-card train-count">
+                            <div class="status-icon">
+                                <i class="fas fa-train"></i>
+                            </div>
+                            <h3>Trains Today</h3>
+                            <p class="status-value" id="train-count">24</p>
+                            <small>6 remaining</small>
+                        </div>
+                        <div class="status-card wait-time">
+                            <div class="status-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <h3>Avg Wait Time</h3>
+                            <p class="status-value" id="wait-time">8 min</p>
+                            <small>Based on today's data</small>
+                        </div>
+                        <div class="status-card location-info">
+                            <div class="status-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <h3>Your Location</h3>
+                            <p class="status-value" id="user-location">Central Station</p>
+                            <small>Gate #3</small>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Train Schedule -->
+            <section class="train-schedule">
+                <div class="container">
+                    <h2 class="section-title">Upcoming Trains</h2>
+                    <div class="schedule-container">
+                        <div class="schedule-header">
+                            <span>Train Number</span>
+                            <span>Arrival Time</span>
+                            <span>Gate Closure</span>
+                            <span>Duration</span>
+                            <span>Status</span>
+                        </div>
+                        <div class="schedule-list" id="train-schedule">
+                            <!-- Dynamic content will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Alternative Routes -->
+            <section class="alternative-routes">
+                <div class="container">
+                    <h2 class="section-title">Alternative Routes</h2>
+                    <div class="routes-grid">
+                        <div class="route-card">
+                            <div class="route-icon">
+                                <i class="fas fa-route"></i>
+                            </div>
+                            <h3>Highway Bypass</h3>
+                            <p class="route-distance">+3.2 km</p>
+                            <p>Via National Highway 44</p>
+                            <div class="route-time">
+                                <i class="fas fa-clock"></i>
+                                <span>15 min longer</span>
+                            </div>
+                        </div>
+                        <div class="route-card">
+                            <div class="route-icon">
+                                <i class="fas fa-road"></i>
+                            </div>
+                            <h3>City Center Route</h3>
+                            <p class="route-distance">+2.8 km</p>
+                            <p>Via Main Street & Park Avenue</p>
+                            <div class="route-time">
+                                <i class="fas fa-clock"></i>
+                                <span>12 min longer</span>
+                            </div>
+                        </div>
+                        <div class="route-card">
+                            <div class="route-icon">
+                                <i class="fas fa-map-signs"></i>
+                            </div>
+                            <h3>Industrial Zone</h3>
+                            <p class="route-distance">+4.1 km</p>
+                            <p>Via Industrial Road</p>
+                            <div class="route-time">
+                                <i class="fas fa-clock"></i>
+                                <span>18 min longer</span>
+                            </div>
+                        </div>
+                        <div class="route-card recommended">
+                            <div class="route-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h3>Recommended</h3>
+                            <p class="route-distance">+1.5 km</p>
+                            <p>Via Bridge Road</p>
+                            <div class="route-time">
+                                <i class="fas fa-clock"></i>
+                                <span>8 min longer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Live Updates -->
+            <section class="live-updates">
+                <div class="container">
+                    <h2 class="section-title">Live Updates</h2>
+                    <div class="updates-container">
+                        <div class="update-feed" id="update-feed">
+                            <!-- Dynamic updates will be loaded here -->
+                        </div>
+                        <div class="emergency-contact">
+                            <h3>Emergency Contact</h3>
+                            <div class="emergency-info">
+                                <div class="contact-item">
+                                    <i class="fas fa-phone"></i>
+                                    <span>Railway Control: 1800-111-139</span>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-ambulance"></i>
+                                    <span>Emergency: 108</span>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>Police: 100</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <i class="fas fa-train"></i>
+                        <span>Gate Alert</span>
+                    </div>
+                    <div class="footer-info">
+                        <p>Real-time railway gate monitoring system for Pune district</p>
+                        <p>Helping commuters save time with accurate information</p>
+                    </div>
+                    <div class="footer-contact">
+                        <p>Support: support@gatealert.com</p>
+                        <p>Version 1.0.0 | Last Updated: <span id="last-updated"></span></p>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 Gate Alert. All rights reserved. | Developed for Pune district railway safety and convenience</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
